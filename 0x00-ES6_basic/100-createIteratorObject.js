@@ -1,12 +1,12 @@
-export default function createIteratorObject(report) {
-    let array = []
-    let newArray = []
+export default function createIteratorObject (report) {
+  const array = [];
+  const newArray = [];
 
-    for (let data of Object.keys(report)) {
-        array.push(...Object.values(report[data]))
-    }
-    for (let s of array) {
-        newArray.push(...s)
-    }
-    return newArray
+  for (const data of Object.keys(report)) {
+    array.push(...Object.values(report[data]));
+  }
+  for (const s of array) {
+    newArray.push(...s);
+  }
+  return newArray;
 }

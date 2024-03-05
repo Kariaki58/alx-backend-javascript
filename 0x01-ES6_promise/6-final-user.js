@@ -8,7 +8,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     data.map(content => {
       return {
         status: content.status,
-        value: content.value
+        value: content.status === 'fulfilled' ? content.value : String(content.reason),
       }
     })
   })

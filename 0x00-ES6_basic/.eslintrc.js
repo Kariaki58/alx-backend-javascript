@@ -1,9 +1,10 @@
 module.exports = {
+  root: true,
   extends: [
-    'semistandard'
+    "semistandard"
   ],
   rules: {
-    semi: ['error', 'always'],
-    quotes: ['error', 'double']
+    semi: ["error", "always"],
+    quotes: ["error", "double"]
   }
 };

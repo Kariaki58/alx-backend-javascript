@@ -1,4 +1,4 @@
-export default function createIteratorObject (report) {
+export default function createIteratorObject(report) {
   const array = [];
   const newArray = [];
 

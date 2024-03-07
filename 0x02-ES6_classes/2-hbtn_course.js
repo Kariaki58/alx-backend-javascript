@@ -1,41 +1,51 @@
 export default class HolbertonCourse {
     constructor(name, length, students) {
-        if (typeof name === "string") {
-            this._name = name
-        } else {
-            throw new TypeError("Name must be a string")
+        if (typeof name !== "string") {
+            throw new TypeError("Name must be a string");
         }
-        if (typeof length === "number") {
-            this._length = length
-        } else {
-            throw new TypeError("Length must be a number")
+        this._name = name;
+
+        if (typeof length !== "number") {
+            throw new TypeError("Length must be a number");
         }
-        this._students = students
+        this._length = length;
+
+        if (!Array.isArray(students) || students.some(s => typeof s !== "string")) {
+            throw new TypeError("Students must be an array of strings");
+        }
+        this._students = students;
     }
+
     get name() {
-        return this._name
+        return this._name;
     }
+
+    set name(value) {
+        if (typeof value !== "string") {
+            throw new TypeError("Name must be a string");
+        }
+        this._name = value;
+    }
+
     get length() {
-        return this._length
+        return this._length;
     }
+
+    set length(value) {
+        if (typeof value !== "number") {
+            throw new TypeError("Length must be a number");
+        }
+        this._length = value;
+    }
+
     get students() {
-        return this._students
+        return this._students;
     }
-    set name(pars) {
-        if (typeof pars === "string") {
-            this._name = pars
-        } else {
-            throw new TypeError("Name must be a string")
+
+    set students(value) {
+        if (!Array.isArray(value) || value.some(s => typeof s !== "string")) {
+            throw new TypeError("Students must be an array of strings");
         }
-    }
-    set length(pars) {
-        if (typeof pars === "number") {
-            this._length = pars
-        } else {
-            throw new TypeError("Length must be a number")
-        }
-    }
-    set students(pars) {
-        this._students = pars
+        this._students = value;
     }
 }

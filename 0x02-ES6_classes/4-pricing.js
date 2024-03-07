@@ -22,4 +22,7 @@ export default class Pricing {
         console.log()
         return `${this.amount} ${currency} (${this.currency.code})`
     }
+    static convertPrice(amount, conversionRate) {
+        return amount * conversionRate
+    }
 }

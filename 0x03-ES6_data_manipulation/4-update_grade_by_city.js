@@ -7,10 +7,6 @@ export default function updateStudentGradeByCity(Students, city, newGrades){
                 grade = data.grade
             }
         })
-        // if (newGrades[index]) {
-        //     grades = newGrades[index].studentId === item.id? 
-        //      newGrades[index].grade
-        // }
         return {...item, grade}
     })
     

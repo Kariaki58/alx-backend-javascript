@@ -1,8 +1,8 @@
 export default function updateStudentGradeByCity(Students, city, newGrades){
     const newArray = Students.filter(item => item.location === city)
-    .map((item, index) => {
+    .map((item) => {
         let grade = "N/A"
-        newGrades.forEach((data, index) => {
+        newGrades.forEach((data) => {
             if(data.studentId === item.id) {
                 grade = data.grade
             }

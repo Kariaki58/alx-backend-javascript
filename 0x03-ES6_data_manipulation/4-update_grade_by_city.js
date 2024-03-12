@@ -1,4 +1,4 @@
-export default function updateStudentGradeByCity (Students, city, newGrades) {
+export default function updateStudentGradeByCity(Students, city, newGrades) {
   const newArray = Students.filter(item => item.location === city)
     .map((item) => {
       let grade = 'N/A';

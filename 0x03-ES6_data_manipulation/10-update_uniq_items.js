@@ -1,4 +1,4 @@
-export default function updateUniqueItems (map) {
+export default function updateUniqueItems(map) {
   if (map.constructor === Map) {
     map.forEach((_, data) => {
       if (map.get(data) === 1) {

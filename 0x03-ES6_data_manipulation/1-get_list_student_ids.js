@@ -1,4 +1,4 @@
-export default function getListStudentIds (objList) {
+export default function getListStudentIds(objList) {
   if (!Array.isArray(objList)) {
     return [];
   }

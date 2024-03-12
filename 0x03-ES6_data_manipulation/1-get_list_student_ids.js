@@ -1,5 +1,5 @@
 export default function getListStudentIds (objList) {
-  if (typeof objList !== 'object') {
+  if (objList.constructor === Array) {
     return [];
   }
   return objList.map(item => {

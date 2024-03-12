@@ -1,8 +1,6 @@
 export default function getListStudentIds (objList) {
-  if (objList.constructor !== Array) {
+  if (!Array.isArray(objList)) {
     return [];
   }
-  return objList.map(item => {
-    return item.id;
-  });
+  return objList.map(item => item.id);
 }

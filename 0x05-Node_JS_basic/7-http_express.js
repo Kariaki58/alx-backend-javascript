@@ -1,5 +1,8 @@
-const http = require('node:http')
+const express = require("express");
 const fs = require('fs').promises;
+
+
+const app = express()
 
 
 async function countStudents(path) {
@@ -33,23 +36,14 @@ async function countStudents(path) {
     }
 }
 const DATABASE = process.argv[2]
-const server = http.createServer(async (request, response) => {
-    response.writeHead(200, { 'Content-Type': 'text/plain' });
-    if (request.url === '/') {
-        response.end("Hello Holberton School!");
-    } else if (request.url === '/students') {
-        try {
-            const studentData = await countStudents(DATABASE);
-            response.end(studentData);
-        } catch (error) {
-            response.writeHead(500, { 'Content-Type': 'text/plain' });
-            response.end(error.message);
-        }
-    } else {
-        response.writeHead(404, { 'Content-Type': 'text/plain' });
-        response.end("Resource not found");
-    }
-});
 
-const PORT = 1245;
-server.listen(PORT);
+app.get("/", (request, response) => {
+    response.send("Hello Holberton School!")
+})
+
+app.get("/students", async (request, response) => {
+    const studentData = await countStudents(DATABASE);
+    response.status(200).send(studentData)
+})
+
+app.listen(1245)

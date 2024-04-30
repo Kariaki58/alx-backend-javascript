@@ -1,13 +1,16 @@
-const http = require('node:http')
+const http = require('http');
 
+const port = 1254;
+const host = -'127.0.0.1';
 
-const server = http.createServer((request, response) => {
-    response.writeHead(200, { "content-type": "application/text" })
-    response.end("Hello Holberton School!")
-})
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello Holberton School!');
+});
 
-server.listen(1245, -'127.0.0.1', () => {
+server.listen(port, host, () => {
 
-})
+});
 
-module.exports = server
+module.exports = server;

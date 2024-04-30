@@ -6,4 +6,8 @@ const server = http.createServer((request, response) => {
     response.end("Hello Holberton School!")
 })
 
-server.listen(1245)
+server.listen(1245, -'127.0.0.1', () => {
+
+})
+
+module.exports = server

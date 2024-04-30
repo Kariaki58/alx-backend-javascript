@@ -4,6 +4,10 @@ const path = require('path');
 const countStudents = (database) => {
     try {
         const fileContent = fs.readFileSync(path.join(__dirname, database), 'utf8');
+        if (!fileContent) {
+            console.log('Cannot load the database')
+            return;
+        }
         const lines = fileContent.trim().split('\n');
         const objects = [];
         const headers = lines[0].split(',');

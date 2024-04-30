@@ -1,13 +1,16 @@
-const readline = require("readline").createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
+process.stdout.write('Welcome to Holberton School, what is your name?\n')
 
-readline.question("Welcome to Holberton School, what is your name?\n", (n) => {
-    console.log(`Your name is: ${n}`)
-    readline.close()
-})
-
-readline.on("close", () => {
-    console.log("This important software is now closing")
-})
+if (process.stdin.isTTY) {
+    process.stdin.on('data', (string) => {
+        process.stdout.write(`Your name is: ${string.toString()}`)
+        process.exit()
+    })
+} else {
+    process.stdin.on('data', (string) => {
+        process.stdout.write(`Your name is: ${string.toString()}`)
+        process.exit()
+    })
+    process.on('close', () => {
+        process.stdout.write('This important software is now closing\n')
+    })
+}

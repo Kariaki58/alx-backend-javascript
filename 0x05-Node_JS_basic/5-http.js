@@ -1,4 +1,4 @@
-const http = require('node:http')
+const http = require('http')
 const fs = require('fs').promises;
 
 
@@ -53,3 +53,5 @@ const server = http.createServer(async (request, response) => {
 
 const PORT = 1245;
 server.listen(PORT);
+
+module.exports = server;

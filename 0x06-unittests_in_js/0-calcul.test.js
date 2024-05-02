@@ -1,3 +1,4 @@
+
 const assert = require('assert')
 const calculateNumber = require('./0-calcul')
 
@@ -14,5 +15,14 @@ describe('calculateNumber', () => {
     })
     it('rounded b input of the function', () => {
         assert.strictEqual(calculateNumber(3, 1.5), 5)
+    })
+    it('check negative number', () => {
+        assert.strictEqual(calculateNumber(-1, -1), -2)
+    })
+    it('check one negative number', () => {
+        assert.strictEqual(calculateNumber(2, -1), 1)
+    })
+    it ('check on whole numbers', () => {
+        assert.strictEqual(calculateNumber(2, 1), 3)
     })
 })

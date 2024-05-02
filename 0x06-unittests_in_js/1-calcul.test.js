@@ -51,4 +51,10 @@ describe("calculateNumber", () => {
     it ('check correct ouput', () => {
         assert.strictEqual(calculateNumber(3, 0, 'DIVIDE'), "Error")
     })
+    it('check correct ouput', () => {
+        assert.strictEqual(calculateNumber(1, 3, 'DIVIDE'), 0.3333333333333333);
+      });
+      it('check correct ouput', () => {
+        assert.strictEqual(calculateNumber(-1, -3, 'DIVIDE'), 0.3333333333333333);
+      });
 })

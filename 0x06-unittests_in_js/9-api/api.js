@@ -12,7 +12,7 @@ app.get("/cart/:id", (req, res) => {
     if (!isNaN(Number(id))) {
         res.status(200).send(`Payment methods for cart ${id}`)
     }
-    res.status(404).send("failed transaction")
+    res.sendStatus(404)
 })
 
 app.listen(7865, () => {

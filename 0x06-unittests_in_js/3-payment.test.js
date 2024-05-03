@@ -9,7 +9,7 @@ describe('sendPaymentRequestToApi', () => {
 
 		sendPaymentRequestToApi(50, 20);
 		expect(calculateNumberSpy.calledOnce).to.be.true;
-		expect(calculateNumberSpy.calledOnceWithExactly(100, 20, 'SUM')).to.be.true;
+		expect(calculateNumberSpy.calledOnceWithExactly('SUM', 100, 20)).to.be.true;
 		calculateNumberSpy.restore();
 	});
 });

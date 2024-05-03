@@ -1,5 +1,5 @@
 const Utils = {
-    calculateNumber(a, b, type) {
+    calculateNumber(type, a, b) {
         let roundeda = Math.round(a)
         let roundedb = Math.round(b)
         if (type === 'SUM')
